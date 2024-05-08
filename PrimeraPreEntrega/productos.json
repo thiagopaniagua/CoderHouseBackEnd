@@ -1,0 +1,47 @@
+[
+    {
+        "title": "play5",
+        "description": "play2joystick",
+        "code": "1",
+        "price": 1234,
+        "status": true,
+        "stock": 10,
+        "category": "electronico",
+        "thumbnail": [
+            "ruta/al/imagen1.jpg",
+            "ruta/al/imagen2.jpg",
+            "ruta/al/imagen3.jpg"
+        ],
+        "id": 1
+    },
+    {
+        "title": "pantalla",
+        "description": "32 pulgadas",
+        "code": "2",
+        "price": 90000,
+        "status": true,
+        "stock": 10,
+        "category": "electronico",
+        "thumbnail": [
+            "ruta/al/imagen1.jpg",
+            "ruta/al/imagen2.jpg",
+            "ruta/al/imagen3.jpg"
+        ],
+        "id": 2
+    },
+    {
+        "title": "joystick",
+        "description": "control ps5",
+        "code": "3",
+        "price": 50000,
+        "status": true,
+        "stock": 10,
+        "category": "electronico",
+        "thumbnail": [
+            "ruta/al/imagen1.jpg",
+            "ruta/al/imagen2.jpg",
+            "ruta/al/imagen3333.jpg"
+        ],
+        "id": 3
+    }
+]
