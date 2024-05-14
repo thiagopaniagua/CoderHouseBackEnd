@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Consola PlayStation®5",
+        "description": "Blazing Speed: Enjoy the power of a custom CPU, GPU, and SSD with E",
+        "code": "1",
+        "price": 180000,
+        "status": true,
+        "stock": 10,
+        "category": "electronico",
+        "thumbnails": [
+            "https://arsonyb2c.vtexassets.com/arquivos/ids/362074/PlayStation-5-DualShock.jpg?v=638162215101070000"
+        ],
+        "id": 1
+    },
+    {
+        "title": "Monitor Samsung 22",
+        "description": "22 FreeSync SALF22T350FHARG enjoy the power and customb fps`",
+        "code": "2",
+        "price": 90000,
+        "status": true,
+        "stock": 10,
+        "category": "electronico",
+        "thumbnails": [
+            "https://monumentalar.vtexassets.com/arquivos/ids/6722584/022222-1.jpg?v=638497467995870000"
+        ],
+        "id": 2
+    },
+    {
+        "title": "Joystick PS5",
+        "description": "PS5 Wireless Joystick Sony PlayStation 5 DualSense White ps5",
+        "code": "3",
+        "price": 50000,
+        "status": true,
+        "stock": 10,
+        "category": "electronico",
+        "thumbnails": [
+            "https://images.fravega.com/f1000/52d4d1d37d599ccd90381e593527ca52.jpg"
+        ],
+        "id": 3
+    },
+    {
+        "title": "Keyboard Kumara",
+        "description": "Its backlighting gives a different touch to your equipment.",
+        "code": "123456",
+        "price": "81000",
+        "status": false,
+        "stock": "12",
+        "category": "tecnology",
+        "thumbnails": [
+            "https://www.soscomputacion.com.ar/22830-large_default/teclado-mecanico-gamer-redragon-kumara-k552-qwerty-outemu-blue-espanol.jpg"
+        ],
+        "id": 4
+    }
+]
