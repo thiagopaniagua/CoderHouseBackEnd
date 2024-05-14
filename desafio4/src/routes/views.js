@@ -5,9 +5,8 @@ const router = Router();
 const productos = new ProductManager();
 
 router.get('/', async (req, res) => {
-  res.render('home', {
-    title: 'Desafio4'
-  });
+  const products = await productos.getProducts();
+  res.render('home', { products });
 });
 
 router.get('/realtimeproducts', async (req, res) => {
