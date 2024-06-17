@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Products</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Lista de Productos en Tiempo Real</h1>
+        <div id="productList" class="row">
+            {{#each products}}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card mb-3" style="width: 18rem;">
+                       <div class="card-img-wrapper">
+                        <img src="{{this.thumbnails}}" class="card-img-top" alt="..." style="height: 300px;">
+                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.title}}</h5>
+                            <p class="card-text">{{this.description}}</p>
+                            <p class="card-text"><strong>Price:</strong> ${{this.price}}</p>
+                            <p class="card-text"><small class="text-muted">ID: {{this.id}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+        <h2 class="text-center">Añadir Producto</h2>
+        <form id="productForm" class="mb-5">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="Description" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" placeholder="Price" required>
+            </div>
+            <div class="form-group">
+                <label for="code">Code</label>
+                <input type="text" class="form-control" id="code" placeholder="Code" required>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" class="form-control" id="stock" placeholder="Stock" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" placeholder="Category" required>
+            </div>
+             <div class="form-group">
+                    <input type="text" id="thumbnails" class="form-control mb-3" placeholder="Thumbnail URL">
+                </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+
+        <h2 class="text-center">Eliminar Producto</h2>
+        <form id="deleteProductForm">
+            <div class="form-group">
+                <label for="productId">ID del Producto a Eliminar</label>
+                <input type="text" class="form-control" id="productId" placeholder="ID del Producto" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Eliminar Producto</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('updateProducts', (products) => {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const col = document.createElement('div');
+                col.classList.add('col-lg-4', 'col-md-6', 'mb-4');
+                col.innerHTML = `
+                    <div class="card mb-3" style="width: 18rem;">
+                      <div class="card-img-wrapper">
+                        <img src="${product.thumbnails}" class="card-img-top" alt="..." style="height: 300px;">
+                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">${product.title}</h5>
+                            <p class="card-text">${product.description}</p>
+                            <p class="card-text"><strong>Price:</strong> $${product.price}</p>
+                            <p class="card-text"><small class="text-muted">ID: ${product.id}</small></p>
+                        </div>
+                    </div>
+                `;
+                productList.appendChild(col);
+            });
+        });
+
+        document.getElementById('productForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const price = parseFloat(document.getElementById('price').value);
+            const code = document.getElementById('code').value;
+            const stock = parseInt(document.getElementById('stock').value);
+            const category = document.getElementById('category').value;
+            const thumbnails = document.getElementById('thumbnails').value;
+            socket.emit('newProduct', { title, description, price, code, stock, category});
+        });
+
+        document.getElementById('deleteProductForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const productId =(document.getElementById('productId').value);
+            socket.emit('deleteProduct', productId);
+        });
+    </script>
+</body>
+</html>
