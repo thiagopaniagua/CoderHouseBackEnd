@@ -1,0 +1,31 @@
+<div class="container chat" style="max-width: 800px;">
+    <div class="row">
+        <div class="col">
+            <div class="userName" id="actions">
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="row overflow-auto bg-body-tertiary output" id="output" style="max-height: 300px;">
+
+    </div>
+    <footer>
+        <div class="row text-center">
+            <div class="col">
+                <div class="input-group mb-3 input-group-sm" style="max-width: 800px;">
+                    <input type="text" class="form-control" placeholder="Tu mensaje" aria-label="Recipient's username"
+                        aria-describedby="button-addon2" id="message">
+                    <button class="btn btn-outline-secondary btn-sm" type="button" id="send">Enviar</button>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="index.js" charset="utf-8"></script>
