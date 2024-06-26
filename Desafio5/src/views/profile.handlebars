@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>Profile</h1>
+    <p>First Name: {{user.first_name}}</p>
+    <p>Last Name: {{user.last_name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Role: {{user.role}}</p>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        function logout() {
+            fetch('/api/sessions/logout', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'Logout exitoso') {
+                    window.location.href = '/login';
+                } else {
+                    alert('Error al cerrar sesión');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al cerrar sesión');
+            });
+        }
+    </script>
+</body>
+
+</html>

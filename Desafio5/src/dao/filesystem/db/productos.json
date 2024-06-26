@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "title": "Mouse Logitech G203",
+        "description": " Aprovecha al máximo tu tiempo de juego con el mouse G203 para juegos disponible en una variedad de vibrantes colores. ",
+        "price": 32000,
+        "code": "a1",
+        "stock": 20,
+        "category": "Perifericos",
+        "thumbnails": [
+            "https://wallnet.com.ar/wp-content/uploads/2022/05/mouse-logitech-gamer-rgb-lila_38560_5.jpeg"
+        ],
+        "status": true
+    },
+    {
+        "id": 2,
+        "title": "Teclado Corsair K65 RGB ",
+        "description": "Combina rendimiento de alto nivel con portabilidad, incluye la tecnología de hiperprocesamiento AXON.",
+        "price": 173000,
+        "code": "a2",
+        "stock": 20,
+        "category": "Perifericos",
+        "thumbnails": [
+            "https://wallnet.com.ar/wp-content/uploads/2022/05/D_NQ_NP_904350-MLA47151823267_082021-O.jpg"
+        ],
+        "status": true
+    },
+    {
+        "id": 3,
+        "title": "Microfono HyperX QuadCast S",
+        "description": "Todo incluido ideal para el aspirante a streamer o podcaster que busca un micrófono de condensador con sonido de calidad. ",
+        "price": 242000,
+        "code": "a3",
+        "stock": 20,
+        "category": "Perifericos",
+        "thumbnails": [
+            "https://wallnet.com.ar/wp-content/uploads/2022/03/Microfono-HyperX-QuadCast-S-pSteaming-Condensador-PC-PS40.jpg"
+        ],
+        "status": true
+    },
+    {
+        "id": 4,
+        "title": "VGA Gigabyte GeForce RTX 3070 ",
+        "description": "NVIDIA Ampere Streaming Multiprocessors  2nd Generation RT Cores  3rd Generation Tensor Cores  Powered by GeForce RTX™ 3070 Ti.",
+        "price": 600000,
+        "code": "a4",
+        "stock": 20,
+        "category": "Hardware",
+        "thumbnails": [
+            "https://wallnet.com.ar/wp-content/uploads/2022/07/VGA-Gigabyte-GeForce-RTX-3070-Ti-GAMING-OC-8G0.jpg"
+        ],
+        "status": true
+    },
+    {
+        "id": 5,
+        "title": "Proces. Intel CometLake Core I5 10400",
+        "description": "CARACTERÍSTICAS:   – Marca : Intel  – Línea : Comet Lake  – Modelo : i5-10400  – GPU integrado : Gráficos HD Intel 630  – Caché : 12 MB  – Cantidad de núcleos 6.",
+        "price": 220000,
+        "code": "a5",
+        "stock": 20,
+        "category": "Hardware",
+        "thumbnails": [
+            "https://wallnet.com.ar/wp-content/uploads/2022/03/Proces.-Intel-CometLake-Core-I5-10400-s12000.jpg"
+        ],
+        "status": true
+    },
+    {
+        "id": 6,
+        "title": "NOTEBOOK ACER ASPIRE 5 CI7",
+        "description": "La Notebook Acer Aspire 5 con procesador Intel Core i7-10510U, 8GB de RAM y un rápido SSD de 256GB",
+        "price": 850000,
+        "code": "a6",
+        "stock": 10,
+        "category": "Notebook",
+        "thumbnails": ["https://wallnet.com.ar/wp-content/uploads/2023/11/NOTEBOOK-ACER-ASPIRE-5-CI78GB256GBFREE-DOS0.jpg"],
+        "status": true
+    }
+]

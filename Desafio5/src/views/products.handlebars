@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+     <h1>Bienvenido, {{user.first_name}} {{user.last_name}} ({{user.role}})</h1>
+      <button onclick="logout()">Logout</button>
+    <h1>Products</h1>
+
+    <div class="container">
+        <div class="row">
+           {{#each products}}
+        <div class="col-lg-3 col-md-6 mb-5">
+                        <div class="card mb-3" style="width: 18rem;">
+                        <div class="card-img-wrapper">
+                            <img src="{{this.thumbnails}}" class="card-img-top" alt="..." style="height: 300px;">
+                        </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{title}}</h5>
+                                <p class="card-text">{{description}}</p>
+                                <p class="card-text"><strong>Price:</strong> ${{price}}</p>
+                                 <button onclick="addToCart('{{id}}')" class="btn btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+    {{/each}}  
+        </div>
+  
+    </div>
+   
+
+    <script>
+        async function addToCart(productId) {      
+            let cartId = localStorage.getItem('cartId');
+
+            if (!cartId) {
+                const createCartResponse = await fetch('/api/carts', { method: 'POST' });
+                const newCart = await createCartResponse.json();
+                cartId = newCart._id;
+                localStorage.setItem('cartId', cartId);
+            }
+
+            const response = await fetch(`/api/carts/${cartId}/product/${productId}`, {
+                method: 'POST'
+            });
+
+            if (response.ok) {
+                alert('Product added to cart');
+            } else {
+                alert('Failed to add product to cart');
+            }
+        }
+
+          function logout() {
+            fetch('/api/sessions/logout', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'Logout exitoso') {
+                    window.location.href = '/login';
+                } else {
+                    alert('Error al cerrar sesión');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al cerrar sesión');
+            });
+        }
+    </script>
+</body>
+</html>
